@@ -1,8 +1,7 @@
-{% set name = "lerc" %}
 {% set version = "4.0.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: lerc
   version: {{ version }}
 
 source:
@@ -19,10 +18,11 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - make  # [unix]
+    - make   # [unix]
     - ninja  # [win]
   #host:
     # TODO: add support for
