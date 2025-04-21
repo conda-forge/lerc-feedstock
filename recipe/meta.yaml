@@ -12,7 +12,7 @@ source:
   # PR made: https://github.com/Esri/lerc/pull/128
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # No real information, keep conda-forge defaults
     - {{ pin_subpackage('lerc', max_pin='x') }}
