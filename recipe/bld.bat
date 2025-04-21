@@ -1,7 +1,7 @@
 setlocal EnableDelayedExpansion
 echo on
 
-cmake -LAH -S .                               ^
+cmake %CMAKE_ARGS% -LAH -S .                               ^
    -B build_conda -G "Ninja"                  ^
    -DCMAKE_BUILD_TYPE="Release"               ^
    -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%"

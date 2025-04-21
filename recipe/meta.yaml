@@ -1,8 +1,7 @@
-{% set name = "lerc" %}
 {% set version = "4.0.0" %}
 
 package:
-  name: {{ name|lower }}
+  name: lerc
   version: {{ version }}
 
 source:
@@ -12,17 +11,18 @@ source:
   # PR made: https://github.com/Esri/lerc/pull/128
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # No real information, keep conda-forge defaults
     - {{ pin_subpackage('lerc', max_pin='x') }}
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
-    - make  # [unix]
+    - make   # [unix]
     - ninja  # [win]
   #host:
     # TODO: add support for
